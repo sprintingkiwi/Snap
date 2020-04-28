@@ -1,4 +1,4 @@
-ai.xml	Conversazione AI
-thymio.xml	Thymio robot
-geombot.xml	GeomBot PerContare
-kinectv2.xml	Kinect V2
+base.xml	Base
+parametri.xml	Parametri
+pivot.xml	Pivot
+arco.xml	Arco
