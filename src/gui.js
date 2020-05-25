@@ -260,7 +260,7 @@ IDE_Morph.prototype.init = function (isAutoFill) {
     this.paletteWidth = 200; // initially same as logo width
     this.stageRatio = 1; // for IDE animations, e.g. when zooming
 
-	this.wasSingleStepping = false; // for toggling to and from app mode
+	this.wasSingleStepping = true; // for toggling to and from app mode
 
     this.loadNewProject = false; // flag when starting up translated
     this.shield = null;
@@ -2235,7 +2235,7 @@ IDE_Morph.prototype.refreshIDE = function () {
 
 IDE_Morph.prototype.applySavedSettings = function () {
     var design = this.getSetting('design'),
-        zoom = this.getSetting('zoom'),
+        zoom = 2 //this.getSetting('zoom'),
         language = this.getSetting('language'),
         click = this.getSetting('click'),
         longform = this.getSetting('longform'),
@@ -3389,12 +3389,18 @@ IDE_Morph.prototype.projectMenu = function () {
         shiftClicked = (world.currentKey === 16);
 
     menu = new MenuMorph(this);
-    menu.addItem('Project notes...', 'editProjectNotes');
-    menu.addLine();
-    menu.addPair('New', 'createNewProject', '^N');
-    menu.addPair('Open...', 'openProjectsBrowser', '^O');
-    menu.addPair('Save', "save", '^S');
-    menu.addItem('Save As...', 'saveProjectsBrowser');
+    
+    
+    // Hide some element (Alessandro)
+    if (shiftClicked){
+        menu.addItem('Project notes...', 'editProjectNotes');
+        menu.addLine();
+        menu.addPair('New', 'createNewProject', '^N');
+        menu.addPair('Open...', 'openProjectsBrowser', '^O');
+        menu.addPair('Save', "save", '^S');
+        menu.addItem('Save As...', 'saveProjectsBrowser');
+    }
+    
     menu.addLine();
     menu.addItem(
         'Import...',
@@ -3438,25 +3444,34 @@ IDE_Morph.prototype.projectMenu = function () {
     );
 
     if (this.stage.globalBlocks.length) {
-        menu.addItem(
-            'Export blocks...',
-            function () {myself.exportGlobalBlocks(); },
-            'show global custom block definitions as XML' +
-                '\nin a new browser window'
-        );
-        menu.addItem(
-            'Unused blocks...',
-            function () {myself.removeUnusedBlocks(); },
-            'find unused global custom blocks' +
-                '\nand remove their definitions'
-        );
+
+        // Hide some element (Alessandro)
+        if (shiftClicked){
+            menu.addItem(
+                'Export blocks...',
+                function () {myself.exportGlobalBlocks(); },
+                'show global custom block definitions as XML' +
+                    '\nin a new browser window'
+            );
+
+            menu.addItem(
+                'Unused blocks...',
+                function () {myself.removeUnusedBlocks(); },
+                'find unused global custom blocks' +
+                    '\nand remove their definitions'
+            );
+        }        
     }
 
-    menu.addItem(
-        'Export summary...',
-        function () {myself.exportProjectSummary(); },
-        'open a new browser browser window\n with a summary of this project'
-    );
+    // Hide some element (Alessandro)
+    if (shiftClicked){
+        menu.addItem(
+            'Export summary...',
+            function () {myself.exportProjectSummary(); },
+            'open a new browser browser window\n with a summary of this project'
+        );
+    }
+    
 
     if (shiftClicked) {
         menu.addItem(
@@ -3495,28 +3510,30 @@ IDE_Morph.prototype.projectMenu = function () {
         'Select categories of additional blocks to add to this project.'
     );
 
-    menu.addItem(
-        localize(graphicsName) + '...',
-        function () {
-            if (location.protocol === 'file:') {
-                myself.importLocalFile();
-                return;
-            }
-            myself.importMedia(graphicsName);
-        },
-        'Select a costume from the media library'
-    );
-    menu.addItem(
-        localize('Sounds') + '...',
-        function () {
-            if (location.protocol === 'file:') {
-                myself.importLocalFile();
-                return;
-            }
-            myself.importMedia('Sounds');
-        },
-        'Select a sound from the media library'
-    );
+    if (shiftClicked) {
+        menu.addItem(
+            localize(graphicsName) + '...',
+            function () {
+                if (location.protocol === 'file:') {
+                    myself.importLocalFile();
+                    return;
+                }
+                myself.importMedia(graphicsName);
+            },
+            'Select a costume from the media library'
+        );
+        menu.addItem(
+            localize('Sounds') + '...',
+            function () {
+                if (location.protocol === 'file:') {
+                    myself.importLocalFile();
+                    return;
+                }
+                myself.importMedia('Sounds');
+            },
+            'Select a sound from the media library'
+        );
+    }    
 
     menu.popup(world, pos);
 };
