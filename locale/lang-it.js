@@ -879,7 +879,7 @@ SnapTranslator.dict.it = {
     'Save As...':
         'Salva con nome...',
     'Import...':
-        'Importa...',
+        'APRI',
     'file menu import hint':
         'carica un file di progetto,\nuna libreria di blocchi,'
             + '\nun costume o un suono esportati'
@@ -887,7 +887,7 @@ SnapTranslator.dict.it = {
     'Export project as plain text...':
         'Esporta il progetto come un file di testo...',
     'Export project...':
-        'Esporta il progetto...',
+        'SALVA',
     'save project data as XML\nto your downloads folder':
         'salva i dati del progetto in formato XML\nnella cartella Download',
     'show project data as XML\nin a new browser window':
@@ -923,7 +923,7 @@ SnapTranslator.dict.it = {
     'For all Sprites':
         'Per tutti gli sprite',
     'Libraries...':
-        'Modulo...',
+        'Aggiungi altri blocchi',
     'Select categories of additional blocks to add to this project.':
         'Seleziona le categorie di blocchi addizionali da aggiungere al progetto.',
     'Select a costume from the media library':
