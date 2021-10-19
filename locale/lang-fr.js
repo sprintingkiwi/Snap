@@ -197,7 +197,7 @@ SnapTranslator.dict.fr = {
     'translator_e-mail':
         'i.scool@mac.com', // optional
     'last_changed':
-        '2019-06-25', // this, too, will appear in the Translators tab
+        '2020-10-28', // this, too, will appear in the Translators tab
 
     // GUI
     // control bar:
@@ -442,14 +442,14 @@ SnapTranslator.dict.fr = {
       // control:
     'when %greenflag clicked':
         'Quand %greenflag est press\u00E9',
-    'when %keyHat key pressed':
-        'Quand %keyHat est press\u00E9',
+    'when %keyHat key pressed %keyName':
+        'Quand %keyHat est press\u00E9 %keyName',
     'when I am clicked':
         'Quand je suis press\u00E9 ',
   'when I am %interaction':
     'Quand je suis %interaction',
-    'when I receive %msgHat':
-        'Quand je re\u00E7ois %msgHat',
+    'when I receive %msgHat %message':
+        'Quand je re\u00E7ois %msgHat %message',
     'broadcast %msg':
         'envoyer \u00E0 tous %msg',
     'broadcast %msg and wait':
@@ -942,11 +942,13 @@ SnapTranslator.dict.fr = {
 
     // scripting area
     'clean up':
-        'effacer',
+        'arranger',
     'arrange scripts\nvertically':
         'arrange scripts\nvertically',
     'add comment':
         'ajouter un commentaire',
+    'undrop':
+        'retour arrière',
     'make a block...':
         'cr\u00E9er un nouveau bloc...',
 

@@ -312,7 +312,7 @@ SnapTranslator.dict.ja = {
     'change y by %n':
         'y座標を %n ずつ変える',
     'set y to %n':
-        '座標を %n にする',
+        'y座標を %n にする',
     'if on edge, bounce':
         'もし端に着いたら、跳ね返る',
     'x position':
@@ -416,12 +416,12 @@ SnapTranslator.dict.ja = {
     // control:
     'when %greenflag clicked':
         '%greenflag が押されたとき',
-    'when %keyHat key pressed':
-        '%keyHat が押されたとき',
-    'when I am clicked':
-        '自分がクリックされたとき',
-    'when I receive %msgHat':
-        '%msgHat を受け取ったとき',
+    'when %keyHat key pressed %keyName':
+        '%keyHat %keyName が押されたとき',
+    'when I am %interaction':
+        '%interaction 自分がクリックされたとき',
+    'when I receive %msgHat %message':
+        '%msgHat %message を受け取ったとき',
     'broadcast %msg':
         '%msg を送る',
     'broadcast %msg and wait':
@@ -590,11 +590,11 @@ SnapTranslator.dict.ja = {
     'add %s to %l':
         '%s を %l に追加する',
     'delete %ida of %l':
-        '%ida を %l から削除する',
+        '%ida 番目を %l から削除する',
     'insert %s at %idx of %l':
-        '%s を %idx 番目に挿入する %l',
+        '%s を %idx 番目になるように %l に挿入する ',
     'replace item %idx of %l with %s':
-        '%idx 番目 %l を %s で置き換える',
+        '%idx 番目の %l の要素を %s で置き換える',
 
     // other
     'Make a block':
